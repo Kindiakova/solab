@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 import java.math.BigInteger;
 import parcs.*;
 
-public class CountPalindromes implements AM
+public class Hash implements AM
 {
     private static long startTime = 0;
 

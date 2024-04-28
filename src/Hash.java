@@ -73,10 +73,7 @@ public class Hash implements AM
 
     public void run(AMInfo info)
     {
-        String s = (String)info.parent.readObject();
-        System.err.println("Started run with " + s + " string");
-        int subresult = countPalindromes(s);
-        System.err.println("Result in run is " + subresult);
+        
         subresult = 1;
         info.parent.write(subresult);
     }

@@ -74,7 +74,7 @@ public class Hash implements AM
     public void run(AMInfo info)
     {
         
-        subresult = 1;
+        int subresult = 1;
         info.parent.write(subresult);
     }
 }

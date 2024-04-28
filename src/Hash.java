@@ -55,9 +55,8 @@ public class Hash implements AM
         int[] results = new int[numberWorkers];
         for (int i = 0; i < numberWorkers; i++)
         {
-            results[i] = 1;
-            //results[i] = channels[i].readInt();
-            //System.out.println("Result[i]: " + results[i]);
+            results[i] = channels[i].readInt();
+            System.out.println("Result[i]: " + results[i]);
             
         }
         System.err.println("Calculation of the result");

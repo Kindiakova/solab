@@ -12,43 +12,7 @@ public class Hash implements AM
 
     public static int countPalindromes(String s)
     {
-        int pos_f = 0;
-        int pos_s = 0;
-        for (int j=0; j<s.length(); j+=1)
-            {
-                if (s.charAt(j) == ' ' && pos_f == 0)
-                {
-                    pos_f = j;
-                } else 
-                if (s.charAt(j) == ' ')
-                {
-                    pos_s = j;
-                }
-            }
-        int start = Integer.valueOf(s.substring(0, pos_f));
-        int step = Integer.valueOf(s.substring(pos_f+1, pos_s));
-        s = s.substring(pos_s+1, s.length());
-        System.err.println("Calculating (in function) for .. "+start+" "+step+" "+s);
-        int n = s.length();
-        int res = 0;
-        int l = start;
-        while (l<n)
-        {
-            int j = 0;
-            while (l - j >= 0 && l + j < n && s.charAt(l - j) == s.charAt(l + j))
-            {
-                res += 1;
-                j += 1;
-            }
-            j = 0;
-            while (l - j >= 0 && l + j + 1 < n && s.charAt(l - j) == s.charAt(l + j + 1))
-            {
-                res += 1;
-                j += 1;
-            }
-            l += step;
-        }
-        System.err.println("Result (in function) is " + res);
+        int res = 1;
         return res;
     }
 
@@ -109,10 +73,6 @@ public class Hash implements AM
 
     public void run(AMInfo info)
     {
-        //int start_pos = (int)info.parent.readObject();
-        //int step = (int)info.parent.readObject();
-        String s = (String)info.parent.readObject();
-        System.err.println("Started run with " + s + " string");
         int subresult = countPalindromes(s);
         System.err.println("Result in run is " + subresult);
         info.parent.write(subresult);
